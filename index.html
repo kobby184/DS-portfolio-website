@@ -154,6 +154,44 @@ html {
   margin-top: -80px; /* Offset to align the scroll correctly */
 }
 
+.plot-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.plot-image:hover {
+  transform: scale(1.05);
+}
+
+.plot-caption {
+  font-size: 16px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.enhanced-plot {
+  max-height: 200px; /* Ensures the image doesn't dominate the card */
+  object-fit: cover; /* Keeps the aspect ratio intact */
+  border-radius: 5px; /* Slight rounded corners for a clean look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enhanced-plot:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for emphasis */
+}
+
+/* Modal Image Style */
+.modal-body img {
+  border-radius: 10px; /* Smooth edges for a clean look */
+  border: 2px solid #ddd; /* Adds a light border for focus */
+}
+
   </style>
 </head>
 <body>
@@ -179,11 +217,13 @@ html {
         <!-- Project 1 -->
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
+            <a href="images/projects/radar.jpg" data-bs-toggle="modal" data-bs-target="#plotModal3">
+            <img src="images/projects/radar.jpg" class="card-img-top" alt="Project 1">
+            </a>
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Project 1</h5>
               <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                This vizualization highlights similar radar chart for non-veterans, titled "Non-veterans Character Strengths by Homelessness Status." The dashed lines represent the mean scores of character strengths for homeless (YES) and non-homeless (NO) non-veterans
               </p>
               <div class="mt-auto">
                 <a href="#" class="btn btn-primary me-2">Blog Post</a>
@@ -192,14 +232,32 @@ html {
             </div>
           </div>
         </div>
+
+         <!-- Modal for Larger View -->
+<div class="modal fade" id="plotModal3" tabindex="-1" aria-labelledby="plotModalLabel3" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="plotModalLabel3">Veterans Means of Character Strengths by Homelessness Status</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="images/projects/radar.jpg" class="img-fluid" alt="Detailed Project Visualization 2">
+      </div>
+    </div>
+  </div>
+</div>
+
         <!-- Project 2 -->
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+            <a href="images/projects/trendcrime.png" data-bs-toggle="modal" data-bs-target="#plotModal2">
+            <img src="images/projects/trendcrime.png" class="img-fluid" alt="Project 2">
+            </a>
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Project 2</h5>
               <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                This vizualization compares the trend of crimes in chicago.
               </p>
               <div class="mt-auto">
                 <a href="#" class="btn btn-primary me-2">Blog Post</a>
@@ -208,14 +266,34 @@ html {
             </div>
           </div>
         </div>
+
+        <!-- Modal for Larger View -->
+<div class="modal fade" id="plotModal2" tabindex="-1" aria-labelledby="plotModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="plotModalLabel2">Crime Trend in Chicago</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="images/projects/trendcrime.png" class="img-fluid" alt="Detailed Project Visualization 2">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
         <!-- Project 3 -->
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+            <a href="images/projects/file.jpg" data-bs-toggle="modal" data-bs-target="#plotModal">   
+            <img src="images/projects/file.jpg" class="card-img-top" alt="Project 3">
+            </a>
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Project 3</h5>
               <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                This visualization highlights the relationship between grade distribution and ethnicity using R.
               </p>
               <div class="mt-auto">
                 <a href="#" class="btn btn-primary me-2">Blog Post</a>
@@ -224,6 +302,21 @@ html {
             </div>
           </div>
         </div>
+
+        <!-- Modal for Larger View -->
+<div class="modal fade" id="plotModal" tabindex="-1" aria-labelledby="plotModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="plotModalLabel">Grade Distribution and Ethnicity</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="images/projects/file.jpg" class="img-fluid" alt="Detailed Project Visualization">
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </section>
@@ -306,7 +399,7 @@ html {
       <!-- Social Media Icons -->
       <div class="row justify-content-center">
         <div class="col-auto">
-          <a href="https://www.linkedin.com/in/kwabena-duodu-3633371b7" class="social-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn">
+          <a href=" https://www.linkedin.com/in/kwabena-duodu-3633371b7/" class="social-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn">
             <img src="icons/linkedin.png" alt="LinkedIn" class="rounded-circle">
           </a>
         </div>
